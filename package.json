@@ -1,0 +1,13 @@
+{
+  "name": "rest-api-teste",
+  "version": "1.0.0",
+  "description": "API Alo Mundo",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
