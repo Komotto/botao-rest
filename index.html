@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Frontend ALO</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Consumindo API OpenShift 🚀</h1>
+
+  <button onclick="chamarAPI()">Chamar API</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function chamarAPI() {
+      fetch("https://rest-api-teste-git-vac.apps.ocp-dev.i.tj.pa.gov.br/api/alo")
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById("resultado").innerText = data.mensagem;
+        })
+        .catch(error => {
+          document.getElementById("resultado").innerText = "Erro ao chamar API";
+          console.error(error);
+        });
+    }
+  </script>
+
+</body>
+</html>
