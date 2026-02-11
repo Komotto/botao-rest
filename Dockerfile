@@ -1,5 +1,11 @@
-FROM registry.access.redhat.com/ubi9/nginx-120
+FROM node:18-alpine
 
-COPY . /opt/app-root/src
+WORKDIR /app
+
+COPY . .
+
+RUN npm install express
 
 EXPOSE 8080
+
+CMD ["node", "server.js"]
