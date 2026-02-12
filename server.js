@@ -1,18 +1,16 @@
 const express = require('express');
-const cors = require('cors');
+const path = require('path');
 
 const app = express();
 
-app.use(cors());
+// Serve arquivos estáticos da pasta atual
+app.use(express.static(__dirname));
 
+// Opcional: rota raiz explícita
 app.get('/', (req, res) => {
-  res.json({ status: "API funcionando 🚀" });
-});
-
-app.get('/api/alo', (req, res) => {
-  res.json({ mensagem: "Alô mundo" });
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(8080, () => {
-  console.log("API rodando na porta 8080");
+  console.log("Frontend rodando na porta 8080");
 });
