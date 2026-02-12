@@ -14,7 +14,7 @@
 
 <script>
 async function chamarApi() {
-  const response = await fetch("https://rest-api-teste-git-vac.apps.ocp-dev.i.tj.pa.gov.br/api/alo");
+  const response = await fetch("https://rest-api-teste-git-vac.apps.ocp-dev.i.tj.pa.gov.br");
   const data = await response.json();
   document.getElementById("resultado").innerText = data.mensagem;
 }
