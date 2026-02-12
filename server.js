@@ -3,7 +3,11 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors()); // libera para qualquer origem
+app.use(cors());
+
+app.get('/', (req, res) => {
+  res.send("API funcionando 🚀");
+});
 
 app.get('/api/alo', (req, res) => {
   res.json({ mensagem: "Alô mundo" });
