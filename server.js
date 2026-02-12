@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 
 app.get('/', (req, res) => {
-  res.send("API funcionando 🚀");
+  res.json({ status: "API funcionando 🚀" });
 });
 
 app.get('/api/alo', (req, res) => {
